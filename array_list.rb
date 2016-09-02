@@ -6,16 +6,22 @@ class ArrayList
 		@arr = FixedArray.new(size).arr
 	end
 
+	class OutOfBoundException < StandardError
+  end
+
 	def add(element)
-		FixedArray
+		fa = FixedArray.new(1)
+		fa.set(0, element)
+		@arr = @arr + fa.arr
+		element
 	end
 
 	def get(index)
-		
+
 	end
 
 	def set(index, element)
-		
+
 	end
 
 end
