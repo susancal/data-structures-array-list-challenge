@@ -1,5 +1,30 @@
 require_relative 'array_list'
 
 describe ArrayList do
+  let(:al) { ArrayList.new(4) }
+  it "is an array" do
+    expect(al.arr).to eq([nil, nil, nil, nil])
+  end
+
+  it "has a length" do
+    expect(al.length).to eq 4
+  end
+
+   it "throws an error if you try to set an index out of bounds" do
+    expect{al.set(8, "whoa there")}.to raise_error(ArrayList::OutOfBoundException, "You cant do that")
+  end
+
+  it "grows when you add a new object" do
+    al.add("added!")
+    expect(al.arr).to eq([nil,nil,nil,nil,"added!"])
+  end
+
+
+
+
+
+
+
+
 
 end

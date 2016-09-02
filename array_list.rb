@@ -1,6 +1,7 @@
 require_relative 'fixed_array'
 
 class ArrayList
+  attr_reader :arr
 
 	def initialize(size)
 		@arr = FixedArray.new(size).arr
@@ -17,7 +18,7 @@ class ArrayList
 	end
 
 	def get(index)
-		if index <= (@arr.length-1)
+		if inbounds?(index)
       return @arr[index]
     else
       raise OutOfBoundException, "You cant do that"
@@ -25,12 +26,16 @@ class ArrayList
 	end
 
 	def set(index, element)
-		 if index <= (@arr.length-1)
+		 if inbounds?(index)
       @arr[index] = element
     else
       raise OutOfBoundException, "You cant do that"
     end
 	end
+
+  def inbounds?(index)
+    index <= (@arr.length-1)
+  end
 
 	def length
 		@arr.length
@@ -43,4 +48,4 @@ p al
 p al.add(4)
 p al
 p al.set(0, 1)
-p al
+p al.length
