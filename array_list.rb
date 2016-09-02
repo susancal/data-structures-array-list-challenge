@@ -42,3 +42,5 @@ al = ArrayList.new(3)
 p al
 p al.add(4)
 p al
+p al.set(0, 1)
+p al

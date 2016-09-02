@@ -6,7 +6,7 @@ class FixedArray
   end
 
   class OutOfBoundException < StandardError
-    
+
   end
 
   def get(index)
