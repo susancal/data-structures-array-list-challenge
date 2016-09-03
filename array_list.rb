@@ -28,6 +28,7 @@ class ArrayList
 	def set(index, element)
 		 if inbounds?(index)
       @arr[index] = element
+      return element
     else
       raise OutOfBoundException, "You cant do that"
     end

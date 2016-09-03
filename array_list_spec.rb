@@ -19,7 +19,13 @@ describe ArrayList do
     expect(al.arr).to eq([nil,nil,nil,nil,"added!"])
   end
 
+  it "gets object at selected index" do
+    expect(al.get(0)).to eq nil
+  end
 
+  it "does something" do
+
+  end
 
 
 
