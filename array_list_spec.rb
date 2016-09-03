@@ -23,9 +23,15 @@ describe ArrayList do
     expect(al.get(0)).to eq nil
   end
 
-  it "does something" do
-
+  it "returns when you set" do
+    expect(al.set(3,"change")).to eq "change"
   end
+
+  it "throws an error if you try to get an index out of bounds" do
+    expect{al.get(8)}.to raise_error(ArrayList::OutOfBoundException, "You cant do that")
+  end
+
+
 
 
 
