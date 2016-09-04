@@ -42,11 +42,20 @@ class ArrayList
 		@arr.length
 	end
 
-end
+  def insert(index, element)
+    if inbounds?(index)
+      n = FixedArray.new(1)
+      n.set(0, @arr.last)
+      i = @arr.length - 2
+      until i+1 == index
+        self.set(i+1, self.get(i))
+        i-=1
+      end
+      self.set(index, element)
+      @arr = @arr + n.arr
+    else
+      raise OutOfBoundException, "You cant do that"
+    end
+  end
 
-al = ArrayList.new(3)
-p al
-p al.add(4)
-p al
-p al.set(0, 1)
-p al.length
+end
